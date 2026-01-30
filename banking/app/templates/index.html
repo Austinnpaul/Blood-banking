@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodBank | Save Lives</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .blood-gradient {
+            background: linear-gradient(135deg, #450a0a 0%, #991b1b 100%);
+        }
+    </style>
+</head>
+<body class="bg-red-950 text-white min-h-screen selection:bg-red-500">
+
+<nav class="glass text-white shadow-2xl sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center animate-pulse">
+                    <span class="text-xs">🩸</span>
+                </div>
+                <span class="text-2xl font-extrabold tracking-tighter italic">Blood<span class="text-red-500">Bank</span></span>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-sm font-medium hover:text-red-400 transition">Home</a>
+                <a href="#" class="text-sm font-medium hover:text-red-400 transition">Find Donors</a>
+                <div class="h-6 w-px bg-white/20"></div>
+                <a href="login.html" class="text-sm font-medium hover:text-red-400 transition">Login</a>
+                <a href="register.html" class="bg-red-600 hover:bg-red-500 px-5 py-2 rounded-full text-sm font-bold transition shadow-lg shadow-red-900/40">Register</a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="menu-btn" class="focus:outline-none text-2xl p-2">☰</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10">
+        <a href="index.html" class="block px-6 py-4 hover:bg-white/5">Home</a>
+        <a href="login.html" class="block px-6 py-4 hover:bg-white/5">Login</a>
+        <a href="register.html" class="block px-6 py-4 bg-red-600">Register</a>
+    </div>
+</nav>
+
+<header class="relative pt-20 pb-16 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-red-400 mb-6">
+            <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+            </span>
+            Emergency Appeals Active
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+            One Donation, <span class="text-red-500">Three Lives.</span>
+        </h1>
+        <p class="text-red-100/70 mb-10 text-lg md:text-xl max-w-2xl mx-auto">
+            Join our network of heroes. We connect voluntary blood donors with patients in need through a seamless, real-time digital platform.
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <button class="px-10 py-4 bg-red-600 hover:bg-red-500 rounded-xl font-bold text-lg transition-all transform hover:-translate-y-1 shadow-2xl shadow-red-900/50">
+                Become a Donor
+            </button>
+            <button class="px-10 py-4 glass hover:bg-white/10 rounded-xl font-bold text-lg transition-all">
+                Request Blood
+            </button>
+        </div>
+    </div>
+</header>
+
+<section class="max-w-7xl mx-auto px-4 py-12">
+    <div class="glass rounded-3xl p-8 border border-white/5">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
+            <div>
+                <h3 class="text-2xl font-bold">Live Blood Inventory</h3>
+                <p class="text-red-300/60 text-sm">Updated real-time by hospital networks</p>
+            </div>
+            <button class="text-sm font-semibold text-red-400 hover:underline">View Local Hospitals →</button>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
+            <div class="bg-white/5 p-4 rounded-2xl border border-white/5 text-center group hover:border-red-500/50 transition">
+                <span class="text-3xl font-black block mb-2">A+</span>
+                <div class="text-[10px] uppercase tracking-tighter text-green-400 font-bold">Stable</div>
+                <div class="w-full bg-white/10 h-1 mt-3 rounded-full overflow-hidden">
+                    <div class="bg-green-500 h-full w-[85%]"></div>
+                </div>
+            </div>
+            <div class="bg-red-500/10 p-4 rounded-2xl border border-red-500/20 text-center relative overflow-hidden">
+                <span class="text-3xl font-black block mb-2 text-red-400">O-</span>
+                <div class="text-[10px] uppercase tracking-tighter text-red-500 font-black animate-pulse">Critical</div>
+                <div class="w-full bg-white/10 h-1 mt-3 rounded-full overflow-hidden">
+                    <div class="bg-red-600 h-full w-[12%]"></div>
+                </div>
+            </div>
+            <div class="bg-white/5 p-4 rounded-2xl border border-white/5 text-center">
+                <span class="text-3xl font-black block mb-2 opacity-50">B+</span>
+                <div class="text-[10px] uppercase tracking-tighter text-red-300/40">Adequate</div>
+                <div class="w-full bg-white/10 h-1 mt-3 rounded-full overflow-hidden">
+                    <div class="bg-yellow-500 h-full w-[45%]"></div>
+                </div>
+            </div>
+            <div class="bg-white/5 p-4 rounded-2xl border border-white/5 text-center">
+                <span class="text-3xl font-black block mb-2 opacity-50">AB+</span>
+                <div class="text-[10px] uppercase tracking-tighter text-red-300/40">Adequate</div>
+                <div class="w-full bg-white/10 h-1 mt-3 rounded-full overflow-hidden">
+                    <div class="bg-yellow-500 h-full w-[60%]"></div>
+                </div>
+            </div>
+            <div class="bg-white/5 p-4 rounded-2xl border border-white/5 text-center">
+                <span class="text-3xl font-black block mb-2">A-</span>
+                <div class="text-[10px] uppercase tracking-tighter text-green-400 font-bold">Stable</div>
+                <div class="w-full bg-white/10 h-1 mt-3 rounded-full overflow-hidden">
+                    <div class="bg-green-500 h-full w-[70%]"></div>
+                </div>
+            </div>
+            <div class="bg-white/5 p-4 rounded-2xl border border-white/5 text-center">
+                <span class="text-3xl font-black block mb-2">B-</span>
+                <div class="text-[10px] uppercase tracking-tighter text-red-300/40">Adequate</div>
+                <div class="w-full bg-white/10 h-1 mt-3 rounded-full overflow-hidden">
+                    <div class="bg-yellow-500 h-full w-[40%]"></div>
+                </div>
+            </div>
+            <div class="bg-white/5 p-4 rounded-2xl border border-white/5 text-center">
+                <span class="text-3xl font-black block mb-2">O+</span>
+                <div class="text-[10px] uppercase tracking-tighter text-green-400 font-bold">Stable</div>
+                <div class="w-full bg-white/10 h-1 mt-3 rounded-full overflow-hidden">
+                    <div class="bg-green-500 h-full w-[90%]"></div>
+                </div>
+            </div>
+            <div class="bg-white/5 p-4 rounded-2xl border border-white/5 text-center">
+                <span class="text-3xl font-black block mb-2">AB-</span>
+                <div class="text-[10px] uppercase tracking-tighter text-red-500 font-black">Low</div>
+                <div class="w-full bg-white/10 h-1 mt-3 rounded-full overflow-hidden">
+                    <div class="bg-red-500 h-full w-[25%]"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 px-4">
+    <div class="max-w-7xl mx-auto text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4">How It Works</h2>
+        <div class="w-20 h-1 bg-red-600 mx-auto"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+        <div class="p-8 glass rounded-2xl text-center group">
+            <div class="w-16 h-16 bg-red-600/20 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl group-hover:scale-110 transition">📅</div>
+            <h4 class="text-xl font-bold mb-4">Registration</h4>
+            <p class="text-red-100/60 text-sm leading-relaxed">Simply register as a donor or request blood through our secure portal.</p>
+        </div>
+        <div class="p-8 glass rounded-2xl text-center group">
+            <div class="w-16 h-16 bg-red-600/20 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl group-hover:scale-110 transition">📍</div>
+            <h4 class="text-xl font-bold mb-4">Connect</h4>
+            <p class="text-red-100/60 text-sm leading-relaxed">Our algorithm matches requests with the nearest compatible donors instantly.</p>
+        </div>
+        <div class="p-8 glass rounded-2xl text-center group">
+            <div class="w-16 h-16 bg-red-600/20 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl group-hover:scale-110 transition">🚑</div>
+            <h4 class="text-xl font-bold mb-4">Save Life</h4>
+            <p class="text-red-100/60 text-sm leading-relaxed">Coordination of donation at local banks or hospital collection centers.</p>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-black/40 border-t border-white/5 py-12 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div>
+            <span class="text-2xl font-bold italic tracking-tighter">Blood<span class="text-red-500">Bank</span></span>
+            <p class="text-white/40 text-sm mt-2">© 2026 Emergency Response Network. All rights reserved.</p>
+        </div>
+        <div class="flex gap-8 text-sm font-semibold text-white/60">
+            <a href="#" class="hover:text-white transition">Privacy Policy</a>
+            <a href="#" class="hover:text-white transition">Admin Portal</a>
+            <a href="#" class="hover:text-white transition">Contact Support</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+    });
+</script>
+
+</body>
+</html>
