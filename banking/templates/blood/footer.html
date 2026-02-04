@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --dark-red: #b71c1c; /* Deep, professional red */
+    --accent-red: #d32f2f;
+  }
+
+  .footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--dark-red);
+    color: white;
+    text-align: center;
+    padding: 20px 0; /* Using padding instead of fixed height for better spacing */
+    border-top: 4px solid var(--accent-red);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  }
+
+  .footer p {
+    margin: 0;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  .footer .brand-name {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+  }
+
+  .footer .credit {
+    font-size: 0.85rem;
+    color: #ffcdd2; /* Soft pink-white for secondary text */
+  }
+
+  /* Heart icon animation */
+  .fa-heart {
+    color: white;
+    animation: beat 1.2s infinite;
+  }
+
+  @keyframes beat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+</head>
+<body>
+
+<div class="footer">
+  <p class="brand-name">
+    <i class="fas fa-heart"></i> Blood Bank Management System
+  </p>
+  <p class="credit">
+    Made In India &copy; 2026
+  </p>
+</div>
+
+</body>
+</html>

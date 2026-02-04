@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        :root {
+            --primary-red: #d32f2f; /* Deep medical red */
+            --dark-red: #9a0007;
+            --light-bg: #f8f9fa;
+        }
+
+        .xyz {
+            margin-bottom: 0px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% static "image/homepage.jpg" %}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            min-height: 500px; /* Better than using many <br> tags */
+            color: white;
+            border-bottom: 5px solid var(--primary-red);
+        }
+
+        .quote-section {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 60px 20px;
+            margin: 0;
+            border-top: 1px solid var(--dark-red);
+        }
+
+        .quote-section .lead {
+            font-style: italic;
+            font-weight: 500;
+            font-size: 1.5rem;
+        }
+
+        .author-tag {
+            color: #ffcdd2; /* Light pinkish-red for contrast */
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+  {% include "blood/navbar.html" %}
+
+  <section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center xyz">
+    <div class="container text-center">
+        <h1 class="display-4 font-weight-bold">Be a Hero. Donate Blood.</h1>
+        <p class="lead">Your small contribution can save a life today.</p>
+    </div>  
+  </section>
+
+  <div class="quote-section text-center">
+    <div class="container">
+        <p class="lead">“Opportunities knock the door sometimes, so don’t let it go and donate blood.”</p>
+        <p class="author-tag">— LazyCoder</p>
+    </div>
+  </div>
+
+  {% include "blood/footer.html" %}
+</body>
+</html>

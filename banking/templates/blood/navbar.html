@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+    /* Custom Red Theme Styles */
+    :root {
+      --main-red: #d32f2f; /* A slightly deeper, professional medical red */
+      --hover-red: #b71c1c;
+    }
+
+    .navbar {
+      background-color: var(--main-red) !important;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      padding: 0.8rem 1rem;
+    }
+
+    .navbar-brand {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-item {
+      margin: 0 5px;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+      padding: 8px 15px !important;
+    }
+
+    /* Hover effect: highlights the button slightly */
+    .nav-link:hover {
+      background-color: var(--hover-red);
+      transform: translateY(-2px);
+      color: #ffffff !important;
+    }
+
+    /* Active link style */
+    .nav-item.active .nav-link {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Adjusting the icon spacing */
+    .fas {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="bs-example">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+      <div class="container"> <a href="/" class="navbar-brand">
+          <i class="fas fa-heartbeat"></i> Blood Bank
+        </a>
+        
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/">
+                <i class="fas fa-home"></i> Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/patient/patientlogin">
+                <i class="fas fa-procedures"></i> Patient
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/donor/donorlogin">
+                <i class="fas fa-user"></i> Donor
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/adminlogin">
+                <i class="fas fa-user-shield"></i> Admin
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+</body>
+</html>
