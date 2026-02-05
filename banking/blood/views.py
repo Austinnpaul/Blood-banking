@@ -13,6 +13,10 @@ from patient import models as pmodels
 from donor import forms as dforms
 from patient import forms as pforms
 
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+
+
 def home_view(request):
     x=models.Stock.objects.all()
     print(x)
@@ -68,6 +72,12 @@ def afterlogin_view(request):
         return redirect('patient/patient-dashboard')
     else:
         return redirect('admin-dashboard')
+    
+#     # blood
+def blood_logout_view(request):
+    logout(request)
+    return redirect('blood:adminlogin')
+
 
 @login_required(login_url='adminlogin')
 def admin_dashboard_view(request):

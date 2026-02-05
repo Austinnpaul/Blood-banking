@@ -10,6 +10,8 @@ from django.core.mail import send_mail
 from django.contrib.auth.models import User
 from blood import forms as bforms
 from blood import models as bmodels
+from django.contrib.auth import logout
+from django.shortcuts import redirect
 
 def donor_signup_view(request):
     userForm=forms.DonorUserForm()
@@ -78,3 +80,8 @@ def request_history_view(request):
     donor= models.Donor.objects.get(user_id=request.user.id)
     blood_request=bmodels.BloodRequest.objects.all().filter(request_by_donor=donor)
     return render(request,'donor/request_history.html',{'blood_request':blood_request})
+
+def donor_logout_view(request):
+    logout(request)
+    return redirect('donor:donorlogin')
+

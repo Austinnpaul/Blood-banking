@@ -10,7 +10,8 @@ from django.core.mail import send_mail
 from django.contrib.auth.models import User
 from blood import forms as bforms
 from blood import models as bmodels
-
+from django.contrib.auth import logout
+from django.shortcuts import redirect
 
 def patient_signup_view(request):
     userForm=forms.PatientUserForm()
@@ -61,3 +62,9 @@ def my_request_view(request):
     patient= models.Patient.objects.get(user_id=request.user.id)
     blood_request=bmodels.BloodRequest.objects.all().filter(request_by_patient=patient)
     return render(request,'patient/my_request.html',{'blood_request':blood_request})
+
+
+def patient_logout_view(request):
+    logout(request)
+    return redirect('patient:patientlogin')
+
