@@ -13,8 +13,8 @@ from patient import models as pmodels
 from donor import forms as dforms
 from patient import forms as pforms
 
-from django.contrib.auth import logout
-from django.shortcuts import redirect
+# from django.contrib.auth import logout
+# from django.shortcuts import redirect
 
 
 def home_view(request):

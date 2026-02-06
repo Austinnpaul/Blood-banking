@@ -21,7 +21,7 @@ app_name = 'blood'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
+    # path('', include('blood.urls')), 
     
     path('donor/',include('donor.urls')),
     path('patient/',include('patient.urls')),
@@ -47,6 +47,6 @@ urlpatterns = [
     path('admin-request-history', views.admin_request_history_view,name='admin-request-history'),
     path('update-approve-status/<int:pk>', views.update_approve_status_view,name='update-approve-status'),
     path('update-reject-status/<int:pk>', views.update_reject_status_view,name='update-reject-status'),
-    # path('admin-logout/', views.admin_logout_view, name='admin_logout'),
+    path('blood-logout/', views.blood_logout_view, name='blood_logout'),
 
 ]
