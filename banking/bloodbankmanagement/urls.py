@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from django.contrib.auth.views import LogoutView,LoginView
 from blood import views
-app_name = 'blood'
+# app_name = 'blood/'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -47,6 +47,6 @@ urlpatterns = [
     path('admin-request-history', views.admin_request_history_view,name='admin-request-history'),
     path('update-approve-status/<int:pk>', views.update_approve_status_view,name='update-approve-status'),
     path('update-reject-status/<int:pk>', views.update_reject_status_view,name='update-reject-status'),
-    path('blood-logout/', views.blood_logout_view, name='blood_logout'),
+    path('admin-logout/', views.admin_logout_view, name='adminlogout'),
 
 ]
